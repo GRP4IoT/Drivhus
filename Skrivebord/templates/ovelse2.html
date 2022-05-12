@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="crossorigin="anonymous"></script></head><body><h2>Skru pa lyset</h2><inputoninput="skru()"type="range"min="0"max="58"id="lysstyrke"/><script>varsocket = io();functionskru() {socket.emit('skru_rod_browser',                {'lysstyrke' :document.getElementById('lysstyrke').value                })            }</script><inputoninput="skrubl()" type="range" min="0" max="77" id"lysstyrkebla"/><script>varsocket= io(); function skrubl() { socket.emit'skru_bla_browser', { 'lysstyrkebla' :document.getElementById('lysstyrkebla').value}) }</script></body>
+
+</head>
+<body>
+<h2>skru op for rad lys</h2>
+<input oninput="skru()" type="range" min="0" max="58" id="lysstyrke"/>
+<script>
+var socket = io();
+function skru() {
+socket.emit('skru_rod_browser', {
+'lysstyrke' :document.getElementById('lysstyrke').value})
+}
+</script>
+<h3> skru op for bla lys</h3>
+<input oninput="skrubl()" type="range" min="0" max="77" id="lysstyrkebla"/>
+<script>
+var socket = io();
+function skrubl() {
+socket.emit('skru_bla_browser', {
+'lysstyrkebla' :document.getElementById('lysstyrkebla').value})
+}
+</script>
+</body>
+</html>
